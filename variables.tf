@@ -20,19 +20,29 @@ variable "solution_plan_map" {
   type        = map(string)
   default     = {}
 }
-variable "tags" {
-  description = "(Required) tagging for the log analytics workspace"
-}
 
-# Map structure:
+# ##Log analytics solutions to be deployed 
 # solution_plan_map = {
-#     ContainerInsights = [{
-#         publisher = "Microsoft"
-#         product   = "OMSGallery/ContainerInsights"
-#     }]
+#     NetworkMonitoring = {
+#         "publisher" = "Microsoft"
+#         "product"   = "OMSGallery/NetworkMonitoring"
+#     },
+#     ADAssessment = {
+#         "publisher" = "Microsoft"
+#         "product"   = "OMSGallery/ADAssessment"
+#     },
+#     ADReplication = {
+#         "publisher" = "Microsoft"
+#         "product"   = "OMSGallery/ADReplication"
+#     }
 # }
+
 
 variable "logging_map" {
     type = map(any)
-    default     = {}
+    default = {}
+}
+
+variable "tags" {
+  description = "(Required) tagging for the log analytics workspace"
 }
