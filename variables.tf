@@ -17,32 +17,14 @@ variable "name" {
 
 variable "solution_plan_map" {
   description = "(Optional) List of map of the solutions"
-  type        = map(string)
-  default     = {}
-}
-
-# ##Log analytics solutions to be deployed 
-# solution_plan_map = {
-#     NetworkMonitoring = {
-#         "publisher" = "Microsoft"
-#         "product"   = "OMSGallery/NetworkMonitoring"
-#     },
-#     ADAssessment = {
-#         "publisher" = "Microsoft"
-#         "product"   = "OMSGallery/ADAssessment"
-#     },
-#     ADReplication = {
-#         "publisher" = "Microsoft"
-#         "product"   = "OMSGallery/ADReplication"
-#     }
-# }
-
-
-variable "logging_map" {
-    type = map(any)
-    default = {}
+  type = map(any)
 }
 
 variable "tags" {
   description = "(Required) tagging for the log analytics workspace"
+}
+
+variable "logging_map" {
+    type = map(any)
+    default     = {}
 }
