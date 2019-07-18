@@ -18,6 +18,9 @@ resource "azurerm_log_analytics_solution" "la_solution" {
   workspace_resource_id = azurerm_log_analytics_workspace.log_analytics.id
   workspace_name        = azurerm_log_analytics_workspace.log_analytics.name
 
+  // tags = var.tags
+  // Tags not implemented in TF for azurerm_log_analytics_solution
+
   plan {
       product        = var.solution_plan_map[element(local.solution_list, count.index)].product
       publisher      = var.solution_plan_map[element(local.solution_list, count.index)].publisher
