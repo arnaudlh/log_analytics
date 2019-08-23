@@ -16,15 +16,10 @@ variable "name" {
 }
 
 variable "solution_plan_map" {
-  description = "(Optional) List of map of the solutions"
+  description = "(Optional) Map structure containing the list of solutions to be enabled."
   type = map(any)
 }
 
 variable "tags" {
   description = "(Required) tagging for the log analytics workspace"
-}
-
-variable "logging_map" {
-    type = map(any)
-    default     = {}
 }
